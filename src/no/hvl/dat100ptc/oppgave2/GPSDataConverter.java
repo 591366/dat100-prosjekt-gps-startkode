@@ -2,6 +2,7 @@ package no.hvl.dat100ptc.oppgave2;
 
 import no.hvl.dat100ptc.TODO;
 import no.hvl.dat100ptc.oppgave1.GPSPoint;
+import static java.lang.Integer.*;
 
 public class GPSDataConverter {
 
@@ -19,8 +20,14 @@ public class GPSDataConverter {
 		
 		// TODO
 		// OPPGAVE - START
+		hr = parseInt(timestr.substring(11,13));
+		min = parseInt(timestr.substring(14,16));
+		sec = parseInt(timestr.substring(17,19));
 		
-		throw new UnsupportedOperationException(TODO.method());
+		secs = (hr * 60 * 60) + (min * 60) + sec;
+		
+		return secs;
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// OPPGAVE - SLUTT
 		
@@ -32,7 +39,10 @@ public class GPSDataConverter {
 
 		// TODO - START ;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		gpspoint = new GPSPoint(toSeconds(timeStr), Double.parseDouble(latitudeStr), Double.parseDouble(longitudeStr), Double.parseDouble(elevationStr));
+		
+		return gpspoint;
+		//throw new UnsupportedOperationException(TODO.method());
 
 		// OPPGAVE - SLUTT ;
 	    
