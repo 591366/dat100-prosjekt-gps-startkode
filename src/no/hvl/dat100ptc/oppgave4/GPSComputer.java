@@ -224,7 +224,7 @@ public class GPSComputer {
 
 	}
 
-	private static double WEIGHT = 80.0;
+	public static double WEIGHT = 80.0;
 
 	public void displayStatistics() {
 

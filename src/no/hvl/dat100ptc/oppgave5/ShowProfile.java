@@ -48,12 +48,14 @@ public class ShowProfile extends EasyGraphics {
 		int x = MARGIN, y;
 
 		// TODO - START
+		y = ybase;
 
 		for (GPSPoint i : gpspoints) {
 			x = x + 2;
-			y = ybase;
+			
+			int height = y - (int)i.getElevation();
 			if (i.getElevation() > 0) {
-				drawLine(x, y, x, (int)i.getElevation());
+				drawLine(x, y, x, height);
 			}
 		}
 		

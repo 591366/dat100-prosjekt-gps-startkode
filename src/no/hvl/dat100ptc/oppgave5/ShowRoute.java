@@ -73,8 +73,20 @@ public class ShowRoute extends EasyGraphics {
 
 		// TODO - START
 		setColor(0,100,0);
+		double nextLongitude;
+		double nextLatitude;
+		int x = 10;
+		int y = 20;
+		int r = 3;
+		fillCircle(x,y,r);
+		
+		
 		for(GPSPoint i: gpspoints) {
-			drawCircle((int)i.getLongitude(),(int)i.getLatitude(),3);
+			nextLongitude = i.getLongitude() - GPSUtils.findMin(GPSUtils.getLongitudes(gpspoints));
+			nextLatitude = i.getLatitude() - GPSUtils.findMin(GPSUtils.getLatitudes(gpspoints));
+			x = (int)nextLongitude*(int)xstep();
+			y =(int)nextLatitude*(int)ystep();
+			fillCircle(x, y, r);
 		}
 		//throw new UnsupportedOperationException(TODO.method());
 		
@@ -90,6 +102,13 @@ public class ShowRoute extends EasyGraphics {
 		
 		// TODO - START
 		
+		drawString("Total Time     :" + GPSUtils.formatTime(gpscomputer.totalTime()), 5, TEXTDISTANCE);
+		drawString("Total distance :" + GPSUtils.formatDouble(gpscomputer.totalDistance()), 5, TEXTDISTANCE*2);
+		drawString("Total elevation:" + GPSUtils.formatDouble(gpscomputer.totalElevation()), 5, TEXTDISTANCE*3);
+		drawString("Max speed      :" + GPSUtils.formatDouble(gpscomputer.maxSpeed()), 5, TEXTDISTANCE*4);
+		drawString("Average speed  :" + GPSUtils.formatDouble(gpscomputer.averageSpeed()), 5, TEXTDISTANCE*5);
+		drawString("Energy         :" + GPSUtils.formatDouble(gpscomputer.totalKcal(GPSComputer.WEIGHT)), 5, TEXTDISTANCE*6);
+		drawString("Total Time     :" + GPSUtils.formatTime(gpscomputer.totalTime()), 5, TEXTDISTANCE*7);
 		
 		//throw new UnsupportedOperationException(TODO.method());
 		
