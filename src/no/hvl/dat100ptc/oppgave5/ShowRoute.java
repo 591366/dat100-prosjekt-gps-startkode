@@ -102,6 +102,7 @@ public class ShowRoute extends EasyGraphics {
 		setColor(0, 0, 0);
 		setFont("Courier", 12);
 
+		
 		// TODO - START
 
 		drawString("Total Time     :" + GPSUtils.formatTime(gpscomputer.totalTime()), 5, TEXTDISTANCE);

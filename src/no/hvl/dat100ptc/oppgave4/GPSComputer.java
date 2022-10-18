@@ -32,6 +32,8 @@ public class GPSComputer {
 		double distance = 0;
 
 		// TODO - START
+		//hadde ikke trengt if setningen i løkken, kunne heller skrevet gpspoints.length - 1 i løkken.
+		//dette gjelder alle oppgavene nedover, men det fungerer likt.
 
 		for (int i = 0; i < gpspoints.length; i++) {
 			if (i != gpspoints.length - 1) {

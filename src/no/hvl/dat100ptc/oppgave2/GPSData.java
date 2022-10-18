@@ -34,7 +34,7 @@ public class GPSData {
 			this.gpspoints[this.antall] = gpspoint;
 			inserted = true;
 			antall++;
-		}
+		} 
 		
 		return inserted;
 		//throw new UnsupportedOperationException(TODO.method());
@@ -71,6 +71,8 @@ public class GPSData {
 			String elevationstr = Double.toString(this.gpspoints[i].getElevation());
 			
 			System.out.println(timestr + " (" + latitudestr + "," + longitudestr + ") " + elevationstr);
+			
+			//burde bare brukt toString fra GPSPoint
 			
 			
 		}
